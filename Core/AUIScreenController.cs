@@ -188,7 +188,7 @@ namespace deVoid.UIFramework
             }
 
             HierarchyFixOnShow();
-            OnPropertiesSet();
+            // UI is still deactive
 
             if (!gameObject.activeSelf)
             {
@@ -201,6 +201,7 @@ namespace deVoid.UIFramework
                     InTransitionFinished(this);
                 }
             }
+            OnPropertiesSet(); // so the UI data need to be set, when the UI is active already
         }
 
         private void DoAnimation(ATransitionComponent caller, Action callWhenFinished, bool isVisible)
